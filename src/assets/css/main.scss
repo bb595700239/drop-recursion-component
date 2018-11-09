@@ -1,0 +1,807 @@
+.el-input--mini{
+
+}
+
+.g-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  margin: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, .5);
+}
+
+.g-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  margin: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, .5);
+}
+
+.g-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  margin: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0);
+}
+
+.g-box {
+  padding: 0 52px;
+  padding-bottom: 28px;
+  .g-section{
+    margin-top: 28px;
+    .g-title {
+      @include sc(16px,$black);
+      line-height: 22px;
+      font-weight: bold;
+      padding: 18px 0;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #CCC;
+      i{
+        @include sc(20px,$black);
+        margin-left: 16px;
+      }
+      &.no-border{
+        border-bottom: none;
+      }
+    }
+    .g-con{
+      background: #F9FBFC;
+      margin-top: 33px;
+      padding: 28px 0;
+      position: relative;
+      &.white-bg{
+        background: $fc;
+        padding: 0;
+      }
+      .sure-btn{
+        position: absolute;
+        right: 20px;
+        top: 30px;
+        margin-top: -6px;
+      }
+      .g-operation{
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.g-elmenu {
+  .el-submenu__title {
+    height: 52px;
+    padding-left: 36px !important;
+    padding-right: 30px;
+    line-height: 52px;
+    font-size: 14px;
+    color: $fc;
+    span {
+      font-size: 14px;
+      font-family: '黑体-繁';
+      color: #3499bf;
+    }
+    i {
+      font-weight: bold;
+      color: $green;
+    }
+  }
+  .el-menu-item {
+    font-size: 14px;
+    font-family: '黑体-繁';
+    color: #C2C2C2 !important;
+    span {
+      color: #3499bf;
+      font-size: 14px;
+      font-family: '黑体-繁';
+    }
+  }
+  .is-opened {
+    .el-icon-arrow-down {
+      color: $green;
+    }
+    .el-submenu__title {
+      span {
+        color: $fc;
+      }
+    }
+  }
+  .is-active {
+    color: $fc !important;
+    span {
+      color: $fc;
+    }
+  }
+  .el-icon-arrow-down{
+    margin-top: -8px;
+    font-size: 20px;
+    right: 24px;
+    &:before{
+      content: '\E60B';
+    }
+  }
+}
+
+.form-box{
+  .el-form-item{
+    margin-bottom: 20px;
+  }
+  .el-input{
+    height: 48px;
+    .el-input__prefix{
+      left: 13px;
+      .el-input__icon{
+        @include sc(26px,$gray);
+        line-height: 48px;
+      }
+    }
+    .el-input__inner {
+      height: 48px;
+      font-size: 15px;
+      border: none;
+      box-shadow:0 0 10px rgba(0,0,0,.1);
+      padding-left: 49px;
+      &::placeholder{
+        @include sc(16px,#CCCCCC);
+      }
+    }
+  }
+  .el-button{
+    height: 48px;
+    margin-top: 22px;
+    span{
+      font-size: 16px;
+    }
+  }
+}
+
+.wrap-box{
+  .wrap-con{
+    @include wh(60%,auto);
+    background: $fc;
+    border-radius: 6px;
+    margin: 13px auto 0;
+    padding: 25px 0;
+    padding-left: 60px;
+    .el-tabs{
+      .el-tabs__nav-wrap:after{
+        display: none;
+      }
+      .el-tabs__active-bar{
+        width: 52px!important;
+        left: 6px;
+      }
+      .el-tabs__item{
+        font-size: 15px;
+        &:hover,&.is-active{
+          font-weight: bold;
+          color: $green;
+        }
+      }
+    }
+  }
+  .wrap-btns{
+    padding: 14px;
+    text-align: center;
+    .el-button{
+      @include wh(121px,38px);
+    }
+  }
+}
+
+.g-form{
+  .el-form-item{
+    margin-bottom: 24px;
+    .el-form-item__label{
+      @include sc(18px,$black);
+      font-weight:bold;
+    }
+    .el-input{
+      input{
+        border-radius: 2px;
+        border-color: #707070;
+      }
+    }
+    .el-radio__label{
+      color: $black;
+    }
+  }
+}
+
+.g-addForm{
+  .el-form-item{
+    width: 100%;
+    &.no-label{
+      .el-form-item__content{
+      margin-left: 0 !important;
+      }
+    }
+    .el-form-item__label{
+      @include sc(15px,$black);
+      font-weight:bold;
+    }
+    .el-input{
+      input{
+        border-radius: 2px;
+        border-color: #ccc;
+      }
+      &.el-date-editor{
+        width: 100%;
+      }
+    }
+    .el-textarea{
+      textarea{
+        border-radius: 2px;
+        border-color: #ccc;
+        resize: none;
+        height: 150px;
+      }
+    }
+    .el-radio__label{
+      color: $black;
+    }
+    .el-select{
+      display: block;
+    }
+  }
+  .el-row:last-child{
+    .el-form-item{
+      margin: 0;
+    }
+  }
+}
+
+.g-operation{
+  padding: 30px 0;
+  text-align: center;
+  .el-button{
+    width: 121px;
+    height: 38px;
+  }
+  .el-button + .el-button {
+    margin-left: 20px;
+  }
+}
+
+.g-detailbox .g-orderentry.g-rcode{
+  height: auto;
+  align-items: flex-start;
+  p{
+    margin-right: 5px;
+  }
+  .g-rcode-info{
+    flex: 1;
+    align-items: flex-start;
+    img{
+      @include wh(56px,56px);
+      margin-right: 12px;
+    }
+    .el-button{
+      margin-top: -10px;
+    }
+  }
+}
+
+.g-tables{
+  margin: 0 28px;
+  .g-edittable.el-table{
+    .el-form-item{
+      margin-bottom: 0;
+      .el-form-item__content{
+        margin-left: 0 !important;
+      }
+    }
+    .el-icon-remove-outline{
+      @include sc(22px,$black);
+    }
+    &:before{
+      display: none;
+    }
+    .el-table__header tr th{
+      background-color: #F9FBFC;
+      color: $black;
+      border-bottom: none;
+    }
+    td{
+      padding: 0;
+      border-bottom: 3px solid #F9FBFC;
+    }
+  }
+  .g-addbtn{
+    margin-top: 8px;
+    text-align: center;
+    .el-button{
+      @include wh(160px,28px);
+      padding: 0;
+      i{
+        font-size: 18px;
+      }
+    }
+  }
+  .g-title{
+    color: #777 !important;
+  }
+  .g-graytable.el-table{
+    margin-bottom: 20px;
+    .el-icon-circle-plus-outline{
+      @include sc(22px,#777);
+    }
+    &:before{
+      display: none;
+    }
+    .el-table__header tr th{
+      background-color: #F9FBFC;
+      color: #777;
+      border-bottom: 3px solid #F9FBFC;
+    }
+    td{
+      border-bottom: none;
+      padding: 0;
+      background-color: #F9FBFC;
+      .cell{
+        color: #777;
+      }
+    }
+  }
+  .g-price{
+    p{
+      @include sc(14px,$black);
+      line-height: 26px;
+      text-align: right;
+    }
+  }
+}
+
+.g-steps{
+  justify-content: center;
+  .g-step{
+    padding: 30px;
+    @include wh(30%,130px);
+    background: $fc;
+    margin: 16px;
+    .el-step{
+      .el-step__head{
+        .el-step__line-inner{
+
+        }
+      }
+      .el-step__main{
+        .el-step__title{
+          @include sc(14px,#777);
+          line-height: 20px;
+        }
+      }
+    }
+    .g-items{
+      justify-content: center;
+      margin-top: 14px;
+      .el-form-item{
+        max-width: 50%;
+        margin: 0 4px!important;
+        .el-date-editor{
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+.g-input-table{
+  thead tr th{
+    background-color: #F9FBFC;
+    color: $black;
+    border-bottom: none;
+  }
+  tbody tr{
+    background: $fc;
+    td{
+      padding: 5px 0;
+      border-bottom: 3px solid #F9FBFC;
+      text-align: center;
+    }
+  }
+}
+
+.g-buttons{
+  text-align: center;
+}
+.g-tabs{
+  padding-left: 60px;
+  margin-bottom: 30px;
+  .el-tabs__nav-wrap:after{
+    display: none;
+  }
+  .el-tabs__item{
+    height: 26px;
+    line-height: 24px;
+    color: #777;
+    &.is-active{
+      color: $green;
+      font-weight: bold;
+    }
+  }
+}
+
+.g-drawings{
+  justify-content: center;
+  align-items: flex-start;
+  .g-items{
+    width: 67px;
+    margin-right: 42px;
+    .g-item-box{
+      @include wh(67px,44px);
+      position: relative;
+      margin-bottom: 12px;
+      background: $fc;
+      .el-icon-remove{
+        background: $fc;
+        position: absolute;
+        @include sc(15px,$red);
+        right: -6px;
+        top: -4px;
+        border-radius: 50%;
+      }
+      .g-item{
+        overflow: hidden;
+        @include wh(67px,44px);
+        border:1px solid #0089FF;
+        border-radius:4px;
+        img{
+          @include wh(100%,100%);
+        }
+      }
+    }
+    .g-addImg{
+      @include wh(67px,44px);
+      border-radius:4px;
+      background: $fc;
+      border:1px dashed #ccc;
+      text-align: center;
+      position: relative;
+      .el-upload{
+        position: absolute;
+        @include wh(100%,100%);
+        left: 0;
+      }
+      .el-icon-plus{
+        @include sc(27px,#ccc);
+        line-height: 42px;
+      }
+    }
+  }
+  .g-swiper-box{
+    width: 395px;
+    .g-swiper{
+      margin: 0 auto 15px;
+      position: relative;
+      @include wh(279px,168px);
+      background: $fc;
+      border-radius:6px;
+      box-shadow:0 0 10px rgba(0,0,0,0.2);
+      .el-carousel__container{
+        height: 168px;
+      }
+      .g-swiper-arrow{
+        width:31px;
+        height:47px;
+        border:3px solid rgba(51,51,51,1);
+        opacity:1;
+        border-radius:4px;
+        background: none;
+        position: absolute;
+        top: 50%;
+        margin-top: -23.5px;
+        i{
+          @include sc(35px,$black);
+          margin-left: -4px;
+          font-weight: bold;
+          line-height: 41px;
+        }
+        &.arrow-left{
+          left: -58px;
+        }
+        &.arrow-right{
+          right: -58px;
+        }
+        &.arrow-disabled{
+          border-color: #ccc;
+          i{
+            color: #ccc;
+          }
+        }
+      }
+    }
+    .el-textarea textarea{
+      @include wh(395px,60px);
+      resize: none;
+    }
+  }
+
+}
+
+.g-configure{
+  background: $fc;
+  padding: 20px;
+  border-radius:6px;
+  align-items: flex-start;
+  .g-lefttab{
+    margin-top: 14px;
+    width: 100%;
+    .el-tabs__nav{
+      word-wrap: break-word;
+    }
+    .el-tabs__header{
+      width: 70px;
+    }
+    .el-tabs__nav-wrap:after{
+      display: none;
+    }
+    .el-tabs__active-bar{
+      background: transparent;
+    }
+    .el-tabs__item{
+      @include wh(70px,auto);
+      margin-bottom: 25px;
+      text-align: center;
+      padding: 5px 6px;
+      word-wrap: break-word !important;
+      white-space: pre-wrap;
+      border-left: 2px solid transparent;
+      @include sc(14px,#777);
+      line-height: 20px;
+      &.is-active{
+        background: #F9FBFC;
+        border-color: $green;
+        color: $black;
+        font-weight: bold;
+      }
+    }
+  }
+  .g-rightcon{
+    .g-row{
+      background: #F9FBFC;
+      padding: 14px;
+      margin-bottom: 3px;
+      .el-form-item{
+        margin-bottom: 0;
+        margin-top: 16px;
+        .el-select{
+          display: block;
+        }
+        &.margin-0{
+          margin: 0;
+        }
+        &.no-label{
+          .el-form-item__content{
+            margin-left: 0 !important;
+          }
+        }
+      }
+      .g-edittable{
+        .el-form-item{
+          margin: 0;
+        }
+        tr{
+          th{
+            background: $fc;
+            padding: 10px 0;
+            font-weight: normal;
+            color: $black;
+            border-bottom: 3px solid #F9FBFC;
+          }
+          td{
+            color: #777;
+          }
+        }
+      }
+    }
+    .g-tabform{
+      .el-form-item__label{
+        color: #777;
+      }
+    }
+  }
+}
+.el-form.g-tabform{
+  width: 100%;
+}
+.g-btn-radio{
+  .el-radio{
+    @include wh(80px,28px);
+    padding: 0;
+    text-align: center;
+    line-height: 26px;
+    background: $fc;
+    border-color: $green;
+    .el-radio__label{
+      padding: 0;
+      color: $green;
+    }
+    .el-radio__input{
+      display: none;
+    }
+    &.is-checked{
+      background: $green;
+      .el-radio__label{
+        color: $fc;
+      }
+    }
+  }
+}
+
+.g-table-box{
+  flex: 1;
+  .g-border-table{
+    background: #EDF2F8;
+    padding: 0 30px 30px;
+    .el-table{
+      border-top: none;
+      .el-table__header tr th{
+        background: #EDF2F8;
+        border-right: none;
+        border-color: #ccc;
+        .cell{
+          color: $black;
+        }
+      }
+      &:before{
+        display: none;
+      }
+    }
+  }
+}
+
+.g-addDrawing-dialog{
+  .g-drawings{
+    .g-items{
+      width: 92px;
+      margin-right: 59px;
+      .g-item-box{
+        @include wh(92px,61px);
+        margin-bottom: 17px;
+        .el-icon-remove{
+          @include sc(20px,$red);
+          right: -6px;
+          top: -4px;
+        }
+        .g-item{
+          @include wh(92px,61px);
+        }
+      }
+      .g-addImg{
+        @include wh(92px,61px);
+        .el-icon-plus{
+          line-height: 59px;
+        }
+      }
+    }
+    .g-swiper-box{
+      width: 540px;
+      .g-swiper{
+        margin: 0 auto 27px;
+        @include wh(380px,253px);
+        .el-carousel__container{
+          height: 253px;
+        }
+        .g-swiper-arrow{
+          width:35px;
+          height:53px;
+          margin-top: -26.5px;
+          i{
+            @include sc(39px,$black);
+            margin-left: -4px;
+            line-height: 48px;
+          }
+          &.arrow-left{
+            left: -66px;
+          }
+          &.arrow-right{
+            right: -66px;
+          }
+          &.arrow-disabled{
+            border-color: #ccc;
+            i{
+              color: #ccc;
+            }
+          }
+        }
+      }
+      .el-textarea textarea{
+        margin: 0 auto;
+        @include wh(380px,68px);
+      }
+    }
+
+  }
+}
+.add-btn-box{
+  text-align: center;
+  .add-btn{
+    display: inline-block;
+    padding: 10px 50px;
+    text-align: center;
+    background: #EDF2F8;
+    border-radius: 0 0 10px 10px;
+    i{
+      font-size: 20px;
+    }
+  }
+}
+
+.g-table{
+  .el-breadcrumb{
+    .el-breadcrumb__item{
+      .el-breadcrumb__inner{
+        color: #333!important;
+      }
+    }
+  }
+}
+
+.white-form{
+  background: $fc;
+  padding: 10px;
+  .el-row{
+    margin-bottom: 10px;
+    &:last-child{
+      margin: 0;
+    }
+  }
+  .el-icon-circle-close-outline{
+    font-size: 18px;
+  }
+}
+.addMaterial-box{
+  text-align: center;
+  .add-btn{
+    display: inline-block;
+    padding: 5px 50px;
+    text-align: center;
+    background: $fc;
+    border-radius: 0 0 10px 10px;
+    i{
+      font-size: 18px;
+    }
+  }
+}
+
+.craft-box{
+  .is-plain{
+    border-style: dashed;
+    color: #333;
+  }
+  .el-button--primary{
+    background: #D3F1FF;
+    border-color: #5684FF;
+  }
+}
+
+.g-step{
+  .el-step__icon.is-text{
+    background: $green;
+  }
+  .active{
+    .el-step__icon.is-text{
+      background: $fc;
+      border-color: $gray;
+      .el-step__icon-inner{
+        color: $fc;
+      }
+    }
+    &.on .el-step__icon.is-text{
+      border-color: $green;
+    }
+  }
+}
